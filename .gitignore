@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/FileParser.Domain/bin/Debug
+/.vs/FileParser/v14
+/FileParser.Domain/obj/Debug
+/FileParser.Test/bin/Debug
+/FileParser.Test/obj/Debug
+/packages
+/TestResults

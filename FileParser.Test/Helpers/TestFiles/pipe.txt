@@ -1,0 +1,3 @@
+Peacock|Margaret|Female|Pink|1937-09-19
+Buchanan|Steven|Male|Blue|1955-03-04
+Suyama|Michael|Male|Yellow|1963-07-02

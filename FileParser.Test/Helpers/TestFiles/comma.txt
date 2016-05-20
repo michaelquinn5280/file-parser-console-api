@@ -1,0 +1,3 @@
+King,Robert,Male,Blue,1960-05-29
+Callahan,Laura,Male,Blue,1958-01-09
+Dodsworth,Anne,Male,Blue,1966-01-27
