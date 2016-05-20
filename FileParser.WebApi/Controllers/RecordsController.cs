@@ -16,7 +16,25 @@ namespace FileParser.WebApi.Controllers
         /// <summary>
         /// Person Service
         /// </summary>
-        private readonly IPersonService _personService = new PersonService(WebApiApplication.People);
+        private readonly IPersonService _personService;
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public RecordsController()
+            : this(null)
+        {
+            
+        }
+
+        /// <summary>
+        /// DI Contructor
+        /// </summary>
+        /// <param name="personService"></param>
+        public RecordsController(IPersonService personService)
+        {
+            _personService = personService ?? new PersonService(WebApiApplication.People);
+        }
 
         /// <summary>
         /// Get Records Ordered By Gender And Last Name
