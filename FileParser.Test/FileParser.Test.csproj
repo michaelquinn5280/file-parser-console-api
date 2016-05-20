@@ -81,6 +81,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ConsoleTests\ProgramTests.cs" />
     <Compile Include="DomainTests\ParserTests.cs" />
     <Compile Include="DomainTests\FileServiceTests.cs" />
     <Compile Include="DomainTests\PersonServiceTests.cs" />
@@ -89,6 +90,10 @@
     <Compile Include="WebApiTests\RecordsControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FileParser.Console\FileParser.Console.csproj">
+      <Project>{b0461846-9ae0-4b59-862c-6dc55b817f4d}</Project>
+      <Name>FileParser.Console</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FileParser.Domain\FileParser.Domain.csproj">
       <Project>{fc908540-a406-45fc-9e56-72887408a10f}</Project>
       <Name>FileParser.Domain</Name>

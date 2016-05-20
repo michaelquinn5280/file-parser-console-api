@@ -23,17 +23,27 @@ namespace FileParser.Console
         /// <summary>
         /// File Service
         /// </summary>
-        private static FileService _fileService;
+        private static IFileService _fileService;
 
+        /// <summary>
+        /// DI Constructor
+        /// </summary>
+        /// <param name="personService">Person Service</param>
+        /// <param name="fileService">File Service</param>
+        public Program(IPersonService personService, IFileService fileService)
+        {
+            _personService = personService ?? new PersonService(_people);
+            _fileService = fileService ?? new FileService(_personService);
+        }
         /// <summary>
         /// Main
         /// </summary>
         /// <param name="args">Args - whitespace delimeted</param>
         public static void Main(string[] args)
         {
-            _people = new List<Person>();
-            _personService = new PersonService(_people);
-            _fileService = new FileService(_personService);
+            _people = _people ?? new List<Person>();
+            _personService = _personService ?? new PersonService(_people);
+            _fileService = _fileService ?? new FileService(_personService);
 
             // load files if filepaths supplied as args on startup
             foreach (var arg in args)
@@ -47,7 +57,7 @@ namespace FileParser.Console
         /// <summary>
         /// Print Instructions
         /// </summary>
-        private static void PrintInstructions()
+        public static void PrintInstructions()
         {
             System.Console.WriteLine("");
             System.Console.WriteLine("Available Options:");
@@ -67,13 +77,14 @@ namespace FileParser.Console
         /// <summary>
         /// Accept Input From User
         /// </summary>
-        private static void AcceptInput()
+        public static void AcceptInput()
         {
             var quit = false;
             while (!quit)
             {
                 var command = System.Console.ReadLine();
-
+                if (command == null)
+                    break;
                 if (!string.IsNullOrWhiteSpace(command) && command.StartsWith("/load"))
                 {
                     LoadFile(command.Replace("/load ", ""));
@@ -110,7 +121,7 @@ namespace FileParser.Console
         /// Load File from file path provided
         /// </summary>
         /// <param name="filePath">Full file path</param>
-        private static void LoadFile(string filePath)
+        public static void LoadFile(string filePath)
         {
             var success = _fileService.LoadFile(filePath);
             System.Console.WriteLine(success ? "File loaded successfully." : "File load failed.");
@@ -121,7 +132,7 @@ namespace FileParser.Console
         /// </summary>
         /// <param name="people">List of People</param>
         /// <param name="message">Message</param>
-        private static void PrintResults(List<Person> people, string message)
+        public static void PrintResults(List<Person> people, string message)
         {
             if (people.Any())
             {
