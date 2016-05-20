@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileParser.Test", "FilePars
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileParser.Console", "FileParser.Console\FileParser.Console.csproj", "{B0461846-9AE0-4B59-862C-6DC55B817F4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileParser.WebApi", "FileParser.WebApi\FileParser.WebApi.csproj", "{989A1EE8-B074-4D51-9FE2-053514FFD885}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B0461846-9AE0-4B59-862C-6DC55B817F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0461846-9AE0-4B59-862C-6DC55B817F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0461846-9AE0-4B59-862C-6DC55B817F4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989A1EE8-B074-4D51-9FE2-053514FFD885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989A1EE8-B074-4D51-9FE2-053514FFD885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989A1EE8-B074-4D51-9FE2-053514FFD885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989A1EE8-B074-4D51-9FE2-053514FFD885}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
